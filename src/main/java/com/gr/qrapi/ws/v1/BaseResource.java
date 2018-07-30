@@ -1,4 +1,4 @@
-package com.gr.qrapi.ws.v2;
+package com.gr.qrapi.ws.v1;
 
 public class BaseResource {
 	

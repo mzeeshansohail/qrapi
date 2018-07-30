@@ -8,7 +8,7 @@ import javax.ws.rs.core.Application;
 
 import com.gr.qrapi.ws.exception.WsExceptionHandler;
 import com.gr.qrapi.ws.filter.WsCorsFilter;
-import com.gr.qrapi.ws.v2.AdminResource;
+import com.gr.qrapi.ws.v1.AdminResource;
 
 /**
  * This is main configuration file for rest application using rest easy

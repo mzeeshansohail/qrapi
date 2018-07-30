@@ -23,7 +23,6 @@ public class AccountDaoHibernateImpl extends AbstractHibernateDao<Account, Integ
 	@Override
 	public List<Account> getAllAccounts() {
 		
-		
 		try {
 			Session session = getSession();
 			Criteria criteria = session.createCriteria(Account.class);
