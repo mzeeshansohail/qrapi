@@ -29,7 +29,7 @@ public class ContactDaoHibernateImpl extends AbstractHibernateDao<Contact, Integ
 		try {
 			Session session = getSession();
 			session.save(contact);
-			//list of account alert profiles 
+			//list of account alert profiles
 			List<AlertProfile> pro= contact.getAccount().getAlertProfiles();
 			String city=contact.getAddress().getCity();
 			String country= contact.getAddress().getCountry();
