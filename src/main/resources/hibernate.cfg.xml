@@ -5,6 +5,13 @@
 
 <hibernate-configuration>
 	<session-factory name="gris">
-	<mapping resource="hbm/com/gr/qrapi/core/model/Account.hbm.xml"/>
+	
+	
+	
+	<mapping class="com.gr.qrapi.core.model.Address"/>
+	<mapping class="com.gr.qrapi.core.model.AlertProfileLocation"/> 
+	<mapping class="com.gr.qrapi.core.model.AlertProfile"/>
+	<mapping class="com.gr.qrapi.core.model.Contact"/>	
+	<mapping class="com.gr.qrapi.core.model.Account"/>
 	</session-factory>
 </hibernate-configuration>
