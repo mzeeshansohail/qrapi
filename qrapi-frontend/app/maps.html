@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html id="html-map">
+  <head>
+    <title>Locations</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+	 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+   <link rel="stylesheet" href="styles/bootstrapstyle.css">
+	<script src= "scripts/contacts.js"></script>
+	<script src= "scripts/map.js"></script>
+    <style>
+             #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 90%;
+        margin: 0;
+        padding: 0;
+      }
+      #floating-panel {
+        position: absolute;
+        top: 10px;
+        left: 25%;
+        z-index: 5;
+        background-color: #fff;
+        padding: 5px;
+        border: 1px solid #999;
+        text-align: center;
+        font-family: 'Roboto','sans-serif';
+        line-height: 30px;
+        padding-left: 10px;
+      }
+
+    </style>
+  </head>
+  <body id="body-map">
+      <header id="maps-header">        
+        <div class="main-content-header">
+        <h1>Home Locations</h1>        </div>
+    </header>
+    <div id="map"></div>
+    
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC2tw4d6SUXSNjriQGxNDPX2QpXdvQsaRo&callback=initMap">
+    </script>
+    <footer class= "map-footer">
+        <div id="main-footer">
+        </div>
+    </footer>
+  </body>
+</html>
