@@ -19,7 +19,7 @@ id=($.getUrlVar('id'));
         $("#lineTwo").val(response['address']['lineTwo']);
         $("#city").val(response['address']['city']);
         $("#state").val(response['address']['state']);
-        $("#country").val(response['address']['lineOne']);
+        $("#country").val(response['address']['country']);
         $("#name").val(localStorage.name);
         $("#username").val(localStorage.username);
         $("#password").val(localStorage.password);
