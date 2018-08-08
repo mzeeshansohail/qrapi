@@ -1,0 +1,193 @@
+header{
+	background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)) ,url('https://hdwallsource.com/img/2014/9/blur-26347-27038-hd-wallpapers.jpg');
+	background-repeat: no-repeat;
+  color: white;
+  text-align: center;
+  height: 150px;
+  padding: 40px;
+  }
+.footer{
+  background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)) ,url('https://hdwallsource.com/img/2014/9/blur-26347-27038-hd-wallpapers.jpg');
+	background-repeat: no-repeat;
+  height: 50px;
+  bottom: 0;
+  position: fixed;
+  width: 100%;
+}
+.contacts-footer{
+  background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)) ,url('https://hdwallsource.com/img/2014/9/blur-26347-27038-hd-wallpapers.jpg');
+	background-repeat: no-repeat;
+  height: 50px;
+  bottom: 0;
+  margin-top: 18%;
+  width: 100%;
+}
+.contact-header{
+  background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)) ,url('https://hdwallsource.com/img/2014/9/blur-26347-27038-hd-wallpapers.jpg');
+	background-repeat: no-repeat;
+  color: white;
+  text-align: center;
+  height: 150px;
+  padding: 40px;
+  overflow: auto;
+}
+.map-footer{
+  background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)) ,url('https://hdwallsource.com/img/2014/9/blur-26347-27038-hd-wallpapers.jpg');
+	background-repeat: no-repeat;
+  height: 50px;
+  bottom: 0;
+  margin-bottom: 0px;
+  width: 100%;
+}
+body{
+  position:relative;
+    margin:0;
+    padding:0;
+    overflow:auto;
+}
+
+#maps-header{
+  background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)) ,url('https://hdwallsource.com/img/2014/9/blur-26347-27038-hd-wallpapers.jpg');
+  background-repeat: no-repeat;
+  height: 100px;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+#logoutText{
+  float: right;
+  color: #d4d4d4;
+}
+.addnewuser-icon{
+    float: right;
+    margin-right: 20px;
+  }
+  .form-control {
+    box-shadow: none;
+    border-color: #ddd;
+}
+.form-control:focus {
+    border-color: #4aba70; 
+}
+.login-form {
+    width: 350px;
+    margin: 0 auto;
+    padding: 30px 0;
+}
+
+.addcontact-form {
+  width: 800px;
+  margin: 0 auto;
+  padding: 30px 0; 
+  align-content: center;
+}
+.addcontact-form .btn:hover, .addcontact-form .btn:focus {
+  background-image: url('https://hdwallsource.com/img/2014/9/blur-26347-27038-hd-wallpapers.jpg');;
+  }
+
+.addcontact-form form {
+  color: #434343;
+    border-radius: 1px;
+    margin-bottom: 15px;
+    background: #fff;
+    border: 1px solid #f3f3f3;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    padding: 30px;
+}
+.addcontact-form .btn {
+  background: #382a4b;
+  border: none;
+  line-height: normal;
+  }
+
+  .editContact {
+    width: 800px;
+    margin: 0 auto;
+    padding: 30px 0; 
+    align-content: center;
+  }
+  .editContact .btn:hover, .editContact .btn:focus {
+    background-image: url('https://hdwallsource.com/img/2014/9/blur-26347-27038-hd-wallpapers.jpg');;
+    }
+  
+  .editContact form {
+    color: #434343;
+      border-radius: 1px;
+      margin-bottom: 15px;
+      background: #fff;
+      border: 1px solid #f3f3f3;
+      box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+      padding: 30px;
+  }
+  .editContact .btn {
+    background: #382a4b;
+    border: none;
+    line-height: normal;
+    }
+  
+    
+.login-form form {
+    color: #434343;
+    border-radius: 1px;
+    margin-bottom: 15px;
+    background: #fff;
+    border: 1px solid #f3f3f3;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    padding: 30px;
+}
+.login-form h4 {
+    text-align: center;
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+.login-form .avatar {
+color: #fff;
+margin: 0 auto 30px;
+text-align: center;
+width: 100px;
+height: 100px;
+border-radius: 50%;
+z-index: 9;
+background-image: url('https://hdwallsource.com/img/2014/9/blur-26347-27038-hd-wallpapers.jpg');
+padding: 15px;
+box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+}
+.login-form .avatar i {
+font-size: 62px;
+}
+.login-form .form-group {
+margin-bottom: 20px;
+}
+.login-form .form-control, .login-form .btn {
+min-height: 40px;
+border-radius: 2px; 
+transition: all 0.5s;
+}
+.login-form .close {
+position: absolute;
+top: 15px;
+right: 15px;
+}
+.login-form .btn {
+background: #382a4b;
+border: none;
+line-height: normal;
+}
+.login-form .btn:hover, .login-form .btn:focus {
+background-image: url('https://hdwallsource.com/img/2014/9/blur-26347-27038-hd-wallpapers.jpg');;
+}
+.login-form .checkbox-inline {
+float: left;
+}
+.login-form input[type="checkbox"] {
+margin-top: 2px;
+}
+.login-form .forgot-link {
+float: right;
+}
+.login-form .small {
+font-size: 13px;
+}
+.login-form a {
+color: #4aba70;
+}
