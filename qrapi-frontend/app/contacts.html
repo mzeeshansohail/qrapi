@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+	<script src= "scripts/app.js"></script>
+  <script src= "scripts/contacts.js"></script>
+  <link rel="stylesheet" href="styles/bootstrapstyle.css">
+  <script>
+      if(loggedOut()){
+          window.location.href= "index.html";
+      }
+  </script>
+	</head>
+
+<body>
+    <header class="contacts-header">        
+        <div class="main-content-header">
+        <h1>All Contacts Details</h1>        </div>
+          <br>
+        <a href="#" id="logoutText" onclick="logout()">Logout</a>
+    </header>
+
+
+<div id="location" style="float: right;padding: 50px">
+  <a href="maps.html">View Contact homes on MAP</a>
+  <a href="addcontact.html" class="addnewuser-icon" style="margin-left: 20px;"> <i class="fa fa-user-plus"></i>Add new Contact</a>
+</div>
+<br>
+<br>
+<div style="padding: 20px">
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
+</div>
+<br>
+<div id="ScreenData" style="padding: 10px"></div>
+<footer class="contacts-footer">
+    <div id="main-footer">
+    </div>
+</footer>
+
+</body>
+</html>
