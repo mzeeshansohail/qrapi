@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title></title>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles/bootstrapstyle.css">
+  <script src= "scripts/addcontact.js"></script>
+
+  <script>
+      if(loggedOut()){
+          window.location.href= "index.html";
+      }
+  </script>
+
+</head>
+
+<body onload="account()">
+  <header>
+    <div class="main-content-header">
+      <h1>Add Contact</h1>
+    </div>
+  </header>
+  <div class="addcontact-form">
+<form class="form-add">
+  <div>
+      <label for="name-div">Name:</label>
+      <div id="name-div">
+      <input type="text" id="first-name" placeholder="first name">
+      <input type="text" id="last-name" placeholder="last name"><br>
+      </div>
+  </div>
+  <div>
+    <label for="email">Email:</label>
+    <div><input type="text" id="email" placeholder="email"><br></div>
+  </div>
+    <div>
+      <label for="gender">Gender:</label>
+      <div><input type="text" id="gender" placeholder="gender"><br></div>
+    </div>
+
+    <div>
+        <label for="phoneNumber">Phone Number:</label>
+        <div><input type="text" id="phoneNumber" placeholder="phone number"><br></div>
+      </div>
+    <div>
+          <label for="status">Status:</label>
+          <div><input type="text" id="status" placeholder="status"><br></div>
+    </div>
+    <label for="address-div">Address:</label>
+    <div id= "address-div">
+    <input type="text" id="lineOne" placeholder="house #">
+    <input type="text" id="lineTwo" placeholder="street #">
+    <input type="text" id="city" placeholder="city"><br><br>
+    <input type="text" placeholder="state" id="state">
+    <input type="text" id="country" placeholder="country"><br><br>
+  </div>
+  <label for="associated-account-div">Associated Account:</label>  
+  <div id="associated-account-div">
+    <input type="text" id="name" placeholder="name" disabled>
+    <input type="text" id="username" placeholder="username" disabled>
+    <input type="password" id="password" placeholder="password" disabled>
+    <input type="text" id="accountcity" placeholder="city" disabled><br><br>    
+    </div>
+    <button type="button" id="button-add" class="btn btn-primary btn-block btn-lg" onclick="addContact()">Add</button>
+    <button type="button" class="btn btn-primary btn-block btn-lg" id="button-cancel" onclick="cancel()">Cancel</button>
+
+</form>
+</div>
+<footer class="footer">
+    <div id="main-footer">
+    </div>
+</footer>
+
+</body>
+
+</html>
