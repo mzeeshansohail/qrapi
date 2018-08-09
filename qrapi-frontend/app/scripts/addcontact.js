@@ -12,7 +12,7 @@ function addContact(){
     var country    = $("#country").val();
 
     if((firstName==null||firstName==undefined||firstName=="")||(lastName==null||lastName==undefined||lastName=="")||(email==null||email==undefined||email=="")
-    ||(gender==null||gender==undefined||gender=="")||(phoneNumber==null||phoneNumber==undefined||phoneNumber=="")||(status==null||status==undefined||status=="")||
+    ||(phoneNumber==null||phoneNumber==undefined||phoneNumber=="")||(status==null||status==undefined||status=="")||
     (lineOne==null||lineOne==undefined||lineOne=="")||(lineTwo==null||lineTwo==undefined||lineTwo=="")||(city==null||city==undefined||city=="")||
     (state==null||state==undefined||state=="")||(country==null||country==undefined||country=="")){
         alert("plz fill the empty fields!");

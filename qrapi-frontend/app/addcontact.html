@@ -22,7 +22,7 @@
       <h1>Add Contact</h1>
     </div>
   </header>
-  <div class="addcontact-form">
+  <div class="addcontact">
 <form class="form-add">
   <div>
       <label for="name-div">Name:</label>
@@ -32,21 +32,25 @@
       </div>
   </div>
   <div>
-    <label for="email">Email:</label>
-    <div><input type="text" id="email" placeholder="email"><br></div>
+    <label for="email" class="control-label">Email:</label>
+    <div><input type="email" id="email" placeholder="email" data-error="Invalid Email- missing @ or ."><br></div>
   </div>
     <div>
       <label for="gender">Gender:</label>
-      <div><input type="text" id="gender" placeholder="gender"><br></div>
+      <div id= "gender">
+        <input type="radio" name="gender" value="male" checked> Male
+        <input type="radio" name="gender" value="female"> Female<br><br></div>
     </div>
-
     <div>
         <label for="phoneNumber">Phone Number:</label>
         <div><input type="text" id="phoneNumber" placeholder="phone number"><br></div>
       </div>
     <div>
           <label for="status">Status:</label>
-          <div><input type="text" id="status" placeholder="status"><br></div>
+          <select class="form-control" id="status" style="width: 120px">
+            <option>Active</option>
+            <option>Inactive</option>
+            </select>
     </div>
     <label for="address-div">Address:</label>
     <div id= "address-div">
@@ -63,8 +67,8 @@
     <input type="password" id="password" placeholder="password" disabled>
     <input type="text" id="accountcity" placeholder="city" disabled><br><br>    
     </div>
-    <button type="button" id="button-add" class="btn btn-primary btn-block btn-lg" onclick="addContact()">Add</button>
-    <button type="button" class="btn btn-primary btn-block btn-lg" id="button-cancel" onclick="cancel()">Cancel</button>
+    <button type="button" id="button-add" class="btn btn-primary" onclick="addContact()">Add</button>
+    <button type="button" class="btn btn-primary" id="button-cancel" onclick="cancel()">Cancel</button>
 
 </form>
 </div>

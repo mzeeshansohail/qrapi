@@ -14,8 +14,9 @@ function initMap() {
                 $.each(data,function(i,field){
                     var location = data[i]['lineOne'] + ' ' + data[i]['lineTwo'] + ' ' + data[i]['city'] + ' ' + data[i]['state'] + ' ' + data[i]['country'];
                     locations.push(location);
+                    console.log(location);
                 })
-                console.log(JSON.stringify(locations));
+                console.log(locations);
                 var map = new google.maps.Map(document.getElementById('map'), {
                     zoom: 8,
                     center: {lat:33.6844, lng:73.0479}
@@ -23,8 +24,15 @@ function initMap() {
                   console.log(locations.length)
                   for (var x = 0; x <locations.length; x++) {
                       $.getJSON('http://maps.googleapis.com/maps/api/geocode/json?address='+locations[x]+'&sensor=false', null, function (data) {
+                          console.log(data);
+                      	if(!(data.results[0]=="" || data.results[0]==null ||data.results[0]==undefined)){
                           var p = data.results[0].geometry.location
                           var latlng = new google.maps.LatLng(p.lat, p.lng);
+                          console.log("if");
+                      }else{
+                      	console.log("null");
+                      }
+
                           new google.maps.Marker({
                               position: latlng,
                               map: map

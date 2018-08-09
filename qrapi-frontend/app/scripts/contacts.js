@@ -34,7 +34,7 @@ function loadContacts(){
 					strTable += '<td>' + data[i]['email'] + '</td>';
 					var location = data[i]['address']['lineOne'] + ' ' + data[i]['address']['lineTwo'] + ' ' + data[i]['address']['city'] + ' ' + data[i]['address']['state'] + ' ' + data[i]['address']['country'];
 					strTable += '<td>' + location + '</td>';
-					strTable += '<td>' + '<a href="#" id="edit" data-id=' +data[i]['id']+' onClick="getRow()">Edit</a>' + ' ' + '<a href="#" id="delete" data-id=' +data[i]['id']+' onClick="deleteFunction()">Delete</a>' + '</td>';
+					strTable += '<td>' + '<a href="#" id="edit" data-id=' +data[i]['id']+' onClick="getRow()">Edit</a>' + ' ' + '<a href="#" id="delete" data-id=' +data[i]['id']+ ' data-addressid='+ data[i]['address']['id']+' onClick="deleteFunction()">Delete</a>' + '</td>';
 					strTable += '</tr>';
 				});
 				$('#ScreenData').html(strTable);
@@ -42,7 +42,7 @@ function loadContacts(){
 			},
 		error:
 			function (response, status) {
-				alert("Invalid Username or password");
+				alert("Contacts doesnot Exist!");
 			}
 	});
 }
@@ -55,14 +55,15 @@ function getRow(){
 function deleteFunction(){
 		event.preventDefault();
 		var contact_Id= $(event.target).data("id");
+		var address_Id= $(event.target).data("addressid");
+		console.log(address_Id);
 		
 		var r = confirm("Are u sure u want to delete this Contact?");
     if (r == true) {
 			$.ajax({
-				url: 'http://localhost:8080/qrapi/api/v1/contacts/' + contact_Id,
+				url: 'http://localhost:8080/qrapi/api/v1/contacts/' + contact_Id+'/'+address_Id,
 				type: 'DELETE',
 				dataType: "text",
-
 				success:
 					function (response, status) {
 						loadContacts();

@@ -30,12 +30,15 @@
         </div>
     </div>
     <div>
-      <label for="email">Email:</label>
-      <div><input type="text" id="email" placeholder="email"><br></div>
+      <label for="emailbox">Email:</label>
+      <div><input type="email" id="emailbox" placeholder="email"><br></div>
+      <div class="help-block with-errors"></div>
     </div>
       <div>
         <label for="gender">Gender:</label>
-        <div><input type="text" id="gender" placeholder="gender"><br></div>
+        <div id= "gender">
+          <input type="radio" name="gender" value="male" checked> Male
+          <input type="radio" name="gender" value="female"> Female<br><br></div>
       </div>
   
       <div>
@@ -44,7 +47,10 @@
         </div>
       <div>
             <label for="status">Status:</label>
-            <div><input type="text" id="status" placeholder="status"><br></div>
+            <select class="form-control" id="status" style="width: 120px">
+              <option>Active</option>
+              <option>Inactive</option>
+              </select>
       </div>
       <label for="address-div">Address:</label>
       <div id= "address-div">      

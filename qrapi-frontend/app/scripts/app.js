@@ -25,7 +25,7 @@
 					localStorage.username= response.username;
 					localStorage.password= response.password;
 					localStorage.city= response.city;
-					$("#main-text").innerHtml= "login Successful!"
+					alert("login Successful!");
 					console.log(localStorage.accountId);
 					document.location.href = "contacts.html";
 					
@@ -33,7 +33,7 @@
 					error:
 					function(response,status){ // Required Callback Function
 						//"response" receives - whatever written in echo of above PHP script.
-						$("#main-text").innerHtml= "incorrect username or password!";
+						alert("incorrect username or password!");
 						}
 		});
 				}

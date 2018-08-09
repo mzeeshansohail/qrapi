@@ -28,7 +28,7 @@ id=($.getUrlVar('id'));
 		error:
 			function (response, status) { // Required Callback Function
 				//"response" receives - whatever written in echo of above PHP script.
-				alert("Invalid Username or password");
+				alert("Could not load contact");
 			}
 	});
     }
