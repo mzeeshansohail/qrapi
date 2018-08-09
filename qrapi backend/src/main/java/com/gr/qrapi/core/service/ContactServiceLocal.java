@@ -14,7 +14,7 @@ import com.gr.qrapi.core.model.Contact;
 @Local
 public interface ContactServiceLocal {
 	List<Contact> getContactByAccountId(int id);
-	boolean deleteContact(int id);
+	boolean deleteContact(int id, int address_id);
 	boolean updateContact(int id,Contact contact);
 	Contact getContactById(int id);
 	boolean addContact(Contact contact,int id);

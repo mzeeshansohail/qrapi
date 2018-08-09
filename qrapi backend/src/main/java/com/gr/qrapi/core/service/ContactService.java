@@ -26,8 +26,8 @@ public class ContactService implements ContactServiceLocal {
 	}
 
 	@Override
-	public boolean deleteContact(int id) {
-		return ContactDaoHibernateImpl.getDao().deleteContact(id);
+	public boolean deleteContact(int id, int address_id) {
+		return ContactDaoHibernateImpl.getDao().deleteContact(id, address_id);
 	}
 
 	@Override

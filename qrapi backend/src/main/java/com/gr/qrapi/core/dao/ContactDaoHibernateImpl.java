@@ -45,11 +45,14 @@ public class ContactDaoHibernateImpl extends AbstractHibernateDao<Contact, Integ
 	
 
 	@Override
-	public boolean deleteContact(int id) {
+	public boolean deleteContact(int id, int address_id) {
 		try {
 			Session session = getSession();
 			Contact contact= new Contact();
 			contact.setId(id);
+			Address address= new Address();
+			address.setId(address_id);
+			contact.setAddress(address);
 			session.delete(contact);
 			return true;
 			}
@@ -58,6 +61,7 @@ public class ContactDaoHibernateImpl extends AbstractHibernateDao<Contact, Integ
 			}
 				
 	}	
+
 	@Override
 	public boolean updateContact(int id, Contact contact) {
 		try {

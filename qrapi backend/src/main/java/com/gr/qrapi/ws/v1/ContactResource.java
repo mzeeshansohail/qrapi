@@ -51,9 +51,9 @@ public class ContactResource extends BaseResource {
 	}
 	
 	@DELETE
-	@Path("/{id}")
-	public Response deleteContact(@PathParam("id") int id) {
-		boolean checker= getContactService().deleteContact(id);
+	@Path("/{id}/{address_id}")
+	public Response deleteContact(@PathParam("id") int id,@PathParam("address_id") int address_id) {
+		boolean checker= getContactService().deleteContact(id,address_id);
 		if(!checker) {
 			return Response.status(Status.BAD_REQUEST).build();
 		}
