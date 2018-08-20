@@ -43,7 +43,7 @@ public class UrlInfoDaoHibernateImpl extends AbstractHibernateDao<UrlInfo, Integ
 	public String shortenUrl(UrlInfo urlInfo) {
 		try {
 			Session session = getSession();
-			String shortenedUrl = "http://localhost:8080/urlshortener/"+UrlShortener.getRandomString();
+			String shortenedUrl = "http://localhost:8080/urlshortener/" + UrlShortener.getRandomString();
 			session.save(urlInfo);
 			return shortenedUrl;
 		} catch (Exception aex) {
@@ -86,7 +86,7 @@ public class UrlInfoDaoHibernateImpl extends AbstractHibernateDao<UrlInfo, Integ
 		try {
 			Session session = getSession();
 			Criteria criteria = session.createCriteria(UrlInfo.class);
-			criteria.add(Restrictions.eq("shortUrl", "http://localhost:8080/urlshortener/"+shortUrl));
+			criteria.add(Restrictions.eq("shortUrl", "http://localhost:8080/urlshortener/" + shortUrl));
 			List<UrlInfo> list = (List<UrlInfo>) criteria.list();
 			if (list.size() > 0) {
 				UrlInfo urlInfo = (UrlInfo) criteria.list().get(0);

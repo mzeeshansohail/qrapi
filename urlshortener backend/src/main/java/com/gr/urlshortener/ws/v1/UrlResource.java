@@ -31,19 +31,19 @@ public class UrlResource extends BaseResource {
 
 	@GET
 	@Path("/stats/{id}")
-	public StatisticsDto getStats(@PathParam ("id") int id) {
+	public StatisticsDto getStats(@PathParam("id") int id) {
 
 		UrlInfoDto urlInfo = new UrlInfoDto();
-		
+
 		GraphDataDto clicks = new GraphDataDto();
 		GraphDataDto browsers = new GraphDataDto();
 		GraphDataDto platforms = new GraphDataDto();
 
 		urlInfo = getUrlService().getUrlInfo(id);
 		browsers = getUrlService().getBrowsersData(id);
-		platforms= getUrlService().getPlatformsData(id);
+		platforms = getUrlService().getPlatformsData(id);
 		clicks = getUrlService().getClicksData(id);
-		
+
 		HashMap<String, GraphDataDto> statsData = new HashMap<>();
 		statsData.put(CLICKS, clicks);
 		statsData.put(BROWSERS, browsers);
@@ -65,53 +65,54 @@ public class UrlResource extends BaseResource {
 		}
 		return Response.status(Status.OK).entity(shortUrl).build();
 	}
-	
+
 	@GET
 	@Path("/{shortUrl}")
-	public Response redirectToLongUrl(@PathParam("shortUrl") String shortUrl, @HeaderParam("user-agent") String userAgentString) throws Exception {
-		URI longUrl= null;
-		Date dateClicked= new Date();
+	public Response redirectToLongUrl(@PathParam("shortUrl") String shortUrl,
+			@HeaderParam("user-agent") String userAgentString) throws Exception {
+		URI longUrl = null;
+		Date dateClicked = new Date();
 		UserAgent userAgent = UserAgent.parseUserAgentString(userAgentString);
 		String browser = userAgent.getBrowser().getName();
 		String platform = userAgent.getOperatingSystem().getName();
 		try {
-		UrlInfo urlInfo = getUrlService().getLongUrl(shortUrl);
-		if(urlInfo!=null) {
-			longUrl = new URI(urlInfo.getOriginalUrl());
-			Clicks click= new Clicks();
-			click.setBrowser(browser);
-			click.setPlatform(platform);
-			click.setClick(1);
-			click.setUrlinfo(urlInfo);
-			click.setDateClicked(dateClicked);
-			int clickCount = getUrlService().getCount(urlInfo.getId());
-			getUrlService().addClicks(click);
-			getUrlService().incrementClickInUrlInfo(clickCount+1, urlInfo.getId());
-			/**
-			 * after adding the click in table checking if URL is expired
-			 * if expired -> return bad request
-			 * else redirect to the requested Page
-			 */
-			if(DateUtil.getDaysBetween(dateClicked, urlInfo.getExpiryDate())>0) {
-				System.out.println(DateUtil.getDaysBetween(dateClicked, urlInfo.getExpiryDate()));
-				return Response.seeOther(longUrl).build();
-			}else return Response.status(Status.BAD_REQUEST).entity("Url Expired").build();
+			UrlInfo urlInfo = getUrlService().getLongUrl(shortUrl);
+			if (urlInfo != null) {
+				longUrl = new URI(urlInfo.getOriginalUrl());
+				Clicks click = new Clicks();
+				click.setBrowser(browser);
+				click.setPlatform(platform);
+				click.setClick(1);
+				click.setUrlinfo(urlInfo);
+				click.setDateClicked(dateClicked);
+				int clickCount = getUrlService().getCount(urlInfo.getId());
+				getUrlService().addClicks(click);
+				getUrlService().incrementClickInUrlInfo(clickCount + 1, urlInfo.getId());
+				/**
+				 * after adding the click in table checking if URL is expired if expired ->
+				 * return bad request else redirect to the requested Page
+				 */
+				if (DateUtil.getDaysBetween(dateClicked, urlInfo.getExpiryDate()) > 0) {
+					System.out.println(DateUtil.getDaysBetween(dateClicked, urlInfo.getExpiryDate()));
+					return Response.seeOther(longUrl).build();
+				} else
+					return Response.status(Status.BAD_REQUEST).entity("Url Expired").build();
+			} else
+				return Response.status(Status.BAD_REQUEST).entity("longUrl doesn't Exist").build();
+		} catch (Exception aex) {
+			throw new Exception(aex);
 		}
-		else return Response.status(Status.BAD_REQUEST).entity("longUrl doesn't Exist").build();
-	}catch(Exception aex) {
-		throw new Exception(aex);
 	}
-	}
-	
+
 	@GET
 	@Path("/all")
 	public Response getAllUrlInfos() {
 		List<UrlInfo> urlInfos = getUrlService().getAllUrlInfos();
-		if(urlInfos.size()>0) {
+		if (urlInfos.size() > 0) {
 			return Response.status(Status.OK).entity(urlInfos).build();
 		}
 		return Response.status(Status.OK).entity("no urls exists").build();
-		
+
 	}
-	
+
 }

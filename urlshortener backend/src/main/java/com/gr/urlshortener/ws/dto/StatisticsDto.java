@@ -6,7 +6,7 @@ import java.util.HashMap;
 public class StatisticsDto implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	
+
 	private UrlInfoDto urlInfo;
 	private HashMap<String, GraphDataDto> stats;
 

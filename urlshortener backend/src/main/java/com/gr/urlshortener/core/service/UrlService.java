@@ -30,14 +30,14 @@ public class UrlService implements UrlServiceLocal {
 	public String shortenUrl(String longUrl) {
 		int month = 1;
 		Date creationDate = new Date();
-		java.sql.Date date= new java.sql.Date(creationDate.getTime());
+		java.sql.Date date = new java.sql.Date(creationDate.getTime());
 		System.out.println(date);
 		String url = UrlInfoDaoHibernateImpl.getDao().getShortUrl(longUrl);
 
 		if (url != null) {
 			return url;
 		}
-		String shortenedUrl = "http://localhost:8080/urlshortener/"+UrlShortener.getRandomString();
+		String shortenedUrl = "http://localhost:8080/urlshortener/" + UrlShortener.getRandomString();
 		UrlInfo urlInfo = new UrlInfo();
 		urlInfo.setOriginalUrl(longUrl);
 		urlInfo.setShortUrl(shortenedUrl);
@@ -153,7 +153,7 @@ public class UrlService implements UrlServiceLocal {
 		urlInfoDto.setShortUrl(urlInfo.getShortUrl());
 		urlInfoDto.setTotalClicksCount(urlInfo.getTotalClicksCount());
 		return urlInfoDto;
-		
+
 	}
 
 }

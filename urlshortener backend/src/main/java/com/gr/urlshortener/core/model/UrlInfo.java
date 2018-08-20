@@ -29,7 +29,7 @@ public class UrlInfo implements Serializable {
 	private int totalClicksCount;
 	private Date expiryDate;
 	private List<Clicks> clicks;
-	
+
 	public UrlInfo() {
 	}
 
@@ -62,7 +62,7 @@ public class UrlInfo implements Serializable {
 		this.shortUrl = shortUrl;
 	}
 
-	@JsonFormat(shape=JsonFormat.Shape.STRING,pattern="yyyy-MM-dd",timezone="CET") 
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd", timezone = "CET")
 	@Column(name = "created_On", columnDefinition = "java.util.Date")
 	public Date getCreatedOn() {
 		return createdOn;
@@ -80,9 +80,9 @@ public class UrlInfo implements Serializable {
 	public void setTotalClicksCount(int totalClicksCount) {
 		this.totalClicksCount = totalClicksCount;
 	}
-	
-	@JsonFormat(shape=JsonFormat.Shape.STRING,pattern="yyyy-MM-dd",timezone="CET") 
-	@Column(name= "expiry_Date")
+
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd", timezone = "CET")
+	@Column(name = "expiry_Date")
 	public Date getExpiryDate() {
 		return expiryDate;
 	}
@@ -92,7 +92,7 @@ public class UrlInfo implements Serializable {
 	}
 
 	@JsonBackReference
-	@OneToMany(mappedBy="urlinfo", fetch = FetchType.LAZY,  cascade=CascadeType.ALL)
+	@OneToMany(mappedBy = "urlinfo", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	public List<Clicks> getClicks() {
 		return clicks;
 	}
@@ -100,6 +100,5 @@ public class UrlInfo implements Serializable {
 	public void setClicks(List<Clicks> clicks) {
 		this.clicks = clicks;
 	}
-	
-	
+
 }

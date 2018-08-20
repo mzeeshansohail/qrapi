@@ -25,8 +25,9 @@ public class Clicks {
 	private String browser;
 	private Date dateClicked;
 	private UrlInfo urlInfo;
-	
-	public Clicks() {}
+
+	public Clicks() {
+	}
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -34,34 +35,38 @@ public class Clicks {
 	public int getId() {
 		return id;
 	}
+
 	public void setId(int id) {
 		this.id = id;
 	}
-	
+
 	@Column(name = "clicks")
 	public int getClick() {
 		return click;
 	}
+
 	public void setClick(int click) {
 		this.click = click;
 	}
-	
+
 	@Column(name = "platform")
 	public String getPlatform() {
 		return platform;
 	}
+
 	public void setPlatform(String platform) {
 		this.platform = platform;
 	}
-	
+
 	@Column(name = "browser")
 	public String getBrowser() {
 		return browser;
 	}
+
 	public void setBrowser(String browser) {
 		this.browser = browser;
 	}
-	
+
 	@Column(name = "clickDate")
 	public Date getDateClicked() {
 		return dateClicked;
@@ -72,13 +77,14 @@ public class Clicks {
 	}
 
 	@JsonBackReference
-	@ManyToOne(fetch = FetchType.EAGER, cascade= CascadeType.ALL)
-	@JoinColumn(name="urlId",referencedColumnName="Id")
+	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@JoinColumn(name = "urlId", referencedColumnName = "Id")
 	public UrlInfo getUrlinfo() {
 		return urlInfo;
 	}
+
 	public void setUrlinfo(UrlInfo urlinfo) {
 		this.urlInfo = urlinfo;
 	}
-	
+
 }

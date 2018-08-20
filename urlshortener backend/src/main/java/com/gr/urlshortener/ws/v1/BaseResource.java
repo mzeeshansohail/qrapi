@@ -12,7 +12,8 @@ import com.gr.urlshortener.core.service.UrlServiceLocal;
 public class BaseResource {
 
 	UrlServiceLocal urlService = UrlService.getService();
+
 	protected UrlServiceLocal getUrlService() {
 		return urlService;
-}
+	}
 }
