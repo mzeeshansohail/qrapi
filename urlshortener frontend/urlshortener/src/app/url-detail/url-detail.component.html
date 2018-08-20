@@ -1,0 +1,46 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+  crossorigin="anonymous">
+
+
+<div class="container-fluid">
+  <div *ngIf="stats">
+    <h4>Analytics Data for:
+      <a href="{{stats.urlInfo.shortUrl}}" target="_blank" style="color: white" (click)="location.reload()">{{stats.urlInfo.shortUrl}}</a>
+    </h4>
+    <h5>Created ON: {{stats.urlInfo.createdOn}}</h5>
+    <h5>Original Url:
+      <a style="color: white;" href="{{stats.urlInfo.originalUrl}}" target="_blank">{{stats.urlInfo.originalUrl}}
+        <i class="fas fa-external-link-alt"></i>
+      </a>
+    </h5>
+  </div>
+  <div class="card-clicks">
+  <div class="clicksCount">
+    <h3>Total Clicks</h3>
+    <h5>{{clickCount}}</h5>
+  </div>
+</div>
+</div>
+<div class="card">
+<div class="clicks-chart-container">
+  <div class="clicks-chart">
+    <div *ngIf="clicksChart">
+      <canvas id="canvasClicks">{{clicksChart}}</canvas>
+    </div>
+  </div>
+</div>
+</div>
+<div class="card">
+  <div class="other-charts-container">
+  <div class="bar-chart-container">
+    <div *ngIf="platformsChart">
+      <canvas id="canvasPlatforms" class="chart chart-bar">{{platformsChart}}</canvas>
+    </div>
+  </div>
+  <div class="pie-chart-container">
+    <div *ngIf="browsersChart">
+      <canvas id="canvasBrowsers">{{broswersChart}}</canvas>
+    </div>
+  </div>
+</div>
+</div>

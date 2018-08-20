@@ -1,0 +1,59 @@
+/* HeroDetailComponent's private CSS styles */
+@import url('https://unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.min.css');
+*{
+  box-sizing: border-box;
+}
+.container-fluid {
+  background-color: #377bbb;
+  color: white;
+  padding: 2%;
+  padding-left: 5%;
+}
+.clicks-chart-container{
+  padding-left: 20%;
+  padding-right: 10%;
+  width: 100%;   
+}
+.clicks-chart{
+  height: 40%;
+  width: 80%;
+}
+.pie-chart-container{
+  width: 40%;
+  display: inline-block;
+  margin-left: 10%;
+  
+}
+.bar-chart-container{
+  margin-left: 2%;
+  width: 40%;
+  height: 40%;
+  display: inline-block;
+}
+.card{
+  margin-top: 20px;
+  height: fit-content; 
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  margin-left: 5%;
+  width: 90%;
+  padding-bottom: 5%;
+}
+.card:hover{
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.card-clicks{
+  margin-top: 20px;
+  height: fit-content; 
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: fit-content;
+  padding: 0.2%;
+}
+.card-clicks:hover{
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+.container{
+  padding: 3px 10px;
+}
