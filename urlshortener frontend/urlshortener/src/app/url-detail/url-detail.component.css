@@ -38,6 +38,7 @@
   margin-left: 5%;
   width: 90%;
   padding-bottom: 5%;
+  margin-bottom: 10px;
 }
 .card:hover{
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
@@ -56,4 +57,12 @@
 }
 .container{
   padding: 3px 10px;
+}
+
+.main-div{
+  height: fit-content;
+  padding-bottom: 5%;
+}
+.myBtn{
+  margin-left: 5%;
 }

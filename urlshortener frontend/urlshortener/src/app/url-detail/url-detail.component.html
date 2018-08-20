@@ -5,7 +5,7 @@
 <div class="container-fluid">
   <div *ngIf="stats">
     <h4>Analytics Data for:
-      <a href="{{stats.urlInfo.shortUrl}}" target="_blank" style="color: white" (click)="reloadPage()">{{stats.urlInfo.shortUrl}}</a>
+      <a href="{{stats.urlInfo.shortUrl}}" target="_blank" style="color: white" (click)="reload()">{{stats.urlInfo.shortUrl}}</a>
     </h4>
     <h5>Created ON: {{stats.urlInfo.createdOn}}</h5>
     <h5>Original Url:
@@ -14,33 +14,38 @@
       </a>
     </h5>
   </div>
+
+
   <div class="card-clicks">
-    <div class="clicksCount">
-      <h3>Total Clicks</h3>
-      <h5>{{clickCount}}</h5>
+  <div class="clicksCount">
+    <h3>Total Clicks</h3>
+    <h5>{{clickCount}}</h5>
+  </div>
+</div>
+</div>
+<div class="main-div">
+<div class="card">
+<div class="clicks-chart-container">
+  <div class="clicks-chart">
+    <div *ngIf="clicksChart">
+      <canvas id="canvasClicks">{{clicksChart}}</canvas>
     </div>
   </div>
 </div>
-<div class="card">
-  <div class="clicks-chart-container">
-    <div class="clicks-chart">
-      <div *ngIf="clicksChart">
-        <canvas id="canvasClicks">{{clicksChart}}</canvas>
-      </div>
-    </div>
-  </div>
 </div>
 <div class="card">
   <div class="other-charts-container">
-    <div class="bar-chart-container">
-      <div *ngIf="platformsChart">
-        <canvas id="canvasPlatforms" class="chart chart-bar">{{platformsChart}}</canvas>
-      </div>
-    </div>
-    <div class="pie-chart-container">
-      <div *ngIf="browsersChart">
-        <canvas id="canvasBrowsers">{{broswersChart}}</canvas>
-      </div>
+  <div class="bar-chart-container">
+    <div *ngIf="platformsChart">
+      <canvas id="canvasPlatforms" class="chart chart-bar">{{platformsChart}}</canvas>
     </div>
   </div>
+  <div class="pie-chart-container">
+    <div *ngIf="browsersChart">
+      <canvas id="canvasBrowsers">{{broswersChart}}</canvas>
+    </div>
+  </div>
+</div>
+</div>
+<button type="button" class="myBtn btn btn-info" (click)="goBack()">Back</button>
 </div>

@@ -137,4 +137,8 @@ export class URLDetailComponent implements OnInit {
  reloadPage(): void{
     location.reload();
   }
+
+    goBack(): void {
+    this.location.back();
+  }
 }
