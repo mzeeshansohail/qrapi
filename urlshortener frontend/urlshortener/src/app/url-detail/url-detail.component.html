@@ -5,7 +5,7 @@
 <div class="container-fluid">
   <div *ngIf="stats">
     <h4>Analytics Data for:
-      <a href="{{stats.urlInfo.shortUrl}}" target="_blank" style="color: white" (click)="location.reload()">{{stats.urlInfo.shortUrl}}</a>
+      <a href="{{stats.urlInfo.shortUrl}}" target="_blank" style="color: white" (click)="reloadPage()">{{stats.urlInfo.shortUrl}}</a>
     </h4>
     <h5>Created ON: {{stats.urlInfo.createdOn}}</h5>
     <h5>Original Url:

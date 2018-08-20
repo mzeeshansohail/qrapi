@@ -50,9 +50,6 @@ export class URLDetailComponent implements OnInit {
       });
   }
 
-  goBack(): void {
-    this.location.back();
-  }
 
   lineChart(labels: String[], data: number[]): Chart {
     return new Chart('canvasClicks', {
@@ -137,9 +134,7 @@ export class URLDetailComponent implements OnInit {
       }
     })
   }
-
-  //  save(): void {
-  //     this.urlService.updateHero(this.hero)
-  //       .subscribe(() => this.goBack());
-  //   }
+ reloadPage(): void{
+    location.reload();
+  }
 }
