@@ -15,25 +15,25 @@
 </div>
 <div class="card">
   <div class="container">
-  <table class="myTable table table-bordered"> 
-    <tr class="table-header">
-      <th scope="col">#</th>
-      <th style="max-width: 200px;" scope="col">Original Url</th>
-      <th scope="col">created On</th>
-      <th scope="col">Shortened Url</th>
-      <th scope="col">Clicks</th>
-    </tr>
-    <tbody>
-      <tr class="myRow" *ngFor="let url of urls; let i=index" [attr.data-index]="i">
-        <td>{{i+1}}</td>
-        <td>{{url.originalUrl}}</td>
-        <td>{{url.createdOn | date:'yyyy/MM/dd'}}</td>
-        <td>
-          <a routerLink="/stats/{{url.id}}">{{url.shortUrl}}</a>
-        </td>
-        <td>{{url.totalClicksCount}}</td>
+    <table class="myTable table table-bordered">
+      <tr class="table-header">
+        <th scope="col">#</th>
+        <th style="max-width: 200px;" scope="col">Original Url</th>
+        <th scope="col">created On</th>
+        <th scope="col">Shortened Url</th>
+        <th scope="col">Clicks</th>
       </tr>
-    </tbody>
-  </table>
-</div>
+      <tbody>
+        <tr class="myRow" *ngFor="let url of urls; let i=index" [attr.data-index]="i">
+          <td>{{i+1}}</td>
+          <td>{{url.originalUrl}}</td>
+          <td>{{url.createdOn | date:'yyyy/MM/dd'}}</td>
+          <td>
+            <a routerLink="/stats/{{url.id}}">{{url.shortUrl}}</a>
+          </td>
+          <td>{{url.totalClicksCount}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>

@@ -4,37 +4,37 @@ export class Url {
     public createdOn: Date;
     public shortUrl: string;
     public totalClicksCount: number;
-    constructor(){  }
-    getId(): number{
+    constructor() { }
+    getId(): number {
         return this.id;
     }
 
-    getOriginalUrl(): string{
+    getOriginalUrl(): string {
         return this.originalUrl;
     }
-    getCreatedOn(): Date{
+    getCreatedOn(): Date {
         return this.createdOn;
     }
-    getShortUrl(): string{
+    getShortUrl(): string {
         return this.shortUrl;
     }
-    getTotalClicksCount(): number{
+    getTotalClicksCount(): number {
         return this.totalClicksCount;
     }
-    setId(id: number): void{
-        this.id= id;
+    setId(id: number): void {
+        this.id = id;
     }
 
-    setOriginalUrl(originalUrl: string): void{
-        this.originalUrl= originalUrl;
+    setOriginalUrl(originalUrl: string): void {
+        this.originalUrl = originalUrl;
     }
-    setCreatedOn(createdOn: Date): void{
-        this.createdOn= createdOn;
+    setCreatedOn(createdOn: Date): void {
+        this.createdOn = createdOn;
     }
-    setShortUrl(shortUrl: string): void{
-        this.shortUrl= shortUrl;
+    setShortUrl(shortUrl: string): void {
+        this.shortUrl = shortUrl;
     }
-    setTotalClicksCount(totalClicksCount: number): void{
+    setTotalClicksCount(totalClicksCount: number): void {
         this.totalClicksCount = totalClicksCount;
     }
 }

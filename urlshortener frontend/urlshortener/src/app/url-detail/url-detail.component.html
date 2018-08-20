@@ -15,32 +15,32 @@
     </h5>
   </div>
   <div class="card-clicks">
-  <div class="clicksCount">
-    <h3>Total Clicks</h3>
-    <h5>{{clickCount}}</h5>
-  </div>
-</div>
-</div>
-<div class="card">
-<div class="clicks-chart-container">
-  <div class="clicks-chart">
-    <div *ngIf="clicksChart">
-      <canvas id="canvasClicks">{{clicksChart}}</canvas>
+    <div class="clicksCount">
+      <h3>Total Clicks</h3>
+      <h5>{{clickCount}}</h5>
     </div>
   </div>
 </div>
+<div class="card">
+  <div class="clicks-chart-container">
+    <div class="clicks-chart">
+      <div *ngIf="clicksChart">
+        <canvas id="canvasClicks">{{clicksChart}}</canvas>
+      </div>
+    </div>
+  </div>
 </div>
 <div class="card">
   <div class="other-charts-container">
-  <div class="bar-chart-container">
-    <div *ngIf="platformsChart">
-      <canvas id="canvasPlatforms" class="chart chart-bar">{{platformsChart}}</canvas>
+    <div class="bar-chart-container">
+      <div *ngIf="platformsChart">
+        <canvas id="canvasPlatforms" class="chart chart-bar">{{platformsChart}}</canvas>
+      </div>
+    </div>
+    <div class="pie-chart-container">
+      <div *ngIf="browsersChart">
+        <canvas id="canvasBrowsers">{{broswersChart}}</canvas>
+      </div>
     </div>
   </div>
-  <div class="pie-chart-container">
-    <div *ngIf="browsersChart">
-      <canvas id="canvasBrowsers">{{broswersChart}}</canvas>
-    </div>
-  </div>
-</div>
 </div>

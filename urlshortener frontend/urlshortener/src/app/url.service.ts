@@ -18,24 +18,24 @@ export class UrlService {
     private http: HttpClient) { }
 
   /** GET Urls from the server */
-  getUrls (): Observable<Url[]> {
-    return this.http.get<Url[]>(this.apiUrl+'all')
+  getUrls(): Observable<Url[]> {
+    return this.http.get<Url[]>(this.apiUrl + 'all')
       .pipe(
         tap(Urls => this.log('fetched Urls')),
         catchError(this.handleError('getUrls', []))
       );
   }
 
-  getStats(id: number): Observable<Statistics>{
-    return this.http.get<Statistics>(this.apiUrl+'stats/'+id).pipe(tap(Stats=> this.log('fetched Stats')));
+  getStats(id: number): Observable<Statistics> {
+    return this.http.get<Statistics>(this.apiUrl + 'stats/' + id).pipe(tap(Stats => this.log('fetched Stats')));
   }
 
-  addShortUrl(longUrl : string): Observable<Url>{
-    let url : Url = new Url();
+  addShortUrl(longUrl: string): Observable<Url> {
+    let url: Url = new Url();
     url.setOriginalUrl(longUrl);
     longUrl = JSON.stringify(url);
     console.log(longUrl);
-    return this.http.post<Url>(this.apiUrl,longUrl , httpOptions);
+    return this.http.post<Url>(this.apiUrl, longUrl, httpOptions);
   }
 
 
@@ -46,7 +46,7 @@ export class UrlService {
    * @param operation - name of the operation that failed
    * @param result - optional value to return as the observable result
    */
-  private handleError<T> (operation = 'operation', result?: T) {
+  private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
 
       // TODO: send the error to remote logging infrastructure

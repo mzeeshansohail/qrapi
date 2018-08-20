@@ -5,9 +5,9 @@ import { Url } from '../Url';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
-  styleUrls: [ './dashboard.component.css' ]
+  styleUrls: ['./dashboard.component.css']
 })
- 
+
 
 export class DashboardComponent implements OnInit {
   urls: Url[] = [];
@@ -15,17 +15,17 @@ export class DashboardComponent implements OnInit {
   ngOnInit() {
     this.getUrls();
   }
-  
-  getUrls(): void{
+
+  getUrls(): void {
     this.urlService.getUrls().subscribe(urls => this.urls = urls);
   }
 
-  addShortUrl(url: string): void{
-    if(!url){
+  addShortUrl(url: string): void {
+    if (!url) {
 
-    }else{
-    this.urlService.addShortUrl(url).subscribe(url => this.urls.push(url));
-    location.reload();
+    } else {
+      this.urlService.addShortUrl(url).subscribe(url => this.urls.push(url));
+      location.reload();
     }
   }
 }

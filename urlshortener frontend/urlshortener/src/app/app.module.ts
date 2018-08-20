@@ -1,11 +1,11 @@
-import { NgModule }       from '@angular/core';
-import { BrowserModule }  from '@angular/platform-browser';
-import { FormsModule }    from '@angular/forms';
-import { HttpClientModule }    from '@angular/common/http';
-import { AppRoutingModule }     from './app-routing.module';
-import { AppComponent }         from './app.component';
-import { DashboardComponent }   from './dashboard/dashboard.component';
-import { URLDetailComponent }  from './url-detail/url-detail.component';
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { URLDetailComponent } from './url-detail/url-detail.component';
 
 @NgModule({
   imports: [
@@ -22,6 +22,6 @@ import { URLDetailComponent }  from './url-detail/url-detail.component';
     DashboardComponent,
     URLDetailComponent,
   ],
-  bootstrap: [ AppComponent ]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
