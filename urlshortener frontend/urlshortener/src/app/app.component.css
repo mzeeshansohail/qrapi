@@ -1,0 +1,21 @@
+/* AppComponent's private CSS styles */
+@import url('https://unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.min.css');
+
+header {
+  background-color: #377bbb;
+  padding: 10px;
+  text-align: center;
+  font-size: 35px;
+  color: white;
+}
+footer {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  background-color: #377bbb;
+  padding: 20px;
+  text-align: center;
+  font-size: 10px;
+  color: white;
+  position: fixed;
+  bottom: 0%;
+  width: 100%;
+}
