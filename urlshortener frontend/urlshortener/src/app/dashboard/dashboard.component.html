@@ -1,0 +1,39 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+  crossorigin="anonymous">
+<div class="header">
+  <div class="container-fluid">
+    <h1>Simplify Your Links</h1>
+    <form #heroForm="ngForm">
+      <div class="form-group">
+        <input #newUrl type="text" class="form-control" id="url-input" placeholder="Your Original URL here" required>
+      </div>
+      <div class="btn-div">
+        <button type="button" (click)="addShortUrl(newUrl.value)" class="btn btn-success btn-md">Shorten URL</button>
+      </div>
+    </form>
+  </div>
+</div>
+<div class="card">
+  <div class="container">
+  <table class="myTable table table-bordered"> 
+    <tr class="table-header">
+      <th scope="col">#</th>
+      <th style="max-width: 200px;" scope="col">Original Url</th>
+      <th scope="col">created On</th>
+      <th scope="col">Shortened Url</th>
+      <th scope="col">Clicks</th>
+    </tr>
+    <tbody>
+      <tr class="myRow" *ngFor="let url of urls; let i=index" [attr.data-index]="i">
+        <td>{{i+1}}</td>
+        <td>{{url.originalUrl}}</td>
+        <td>{{url.createdOn | date:'yyyy/MM/dd'}}</td>
+        <td>
+          <a routerLink="/stats/{{url.id}}">{{url.shortUrl}}</a>
+        </td>
+        <td>{{url.totalClicksCount}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</div>
