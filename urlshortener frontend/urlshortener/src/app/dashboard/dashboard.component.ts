@@ -5,26 +5,29 @@ import { Url } from '../Url';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.css']
+  styleUrls: [ './dashboard.component.css' ]
 })
-
+ 
 
 export class DashboardComponent implements OnInit {
   urls: Url[] = [];
+  message: string = null;
   constructor(private urlService: UrlService) { }
   ngOnInit() {
     this.getUrls();
   }
-
-  getUrls(): void {
+  
+  getUrls(): void{
     this.urlService.getUrls().subscribe(urls => this.urls = urls);
   }
 
-  addShortUrl(url: string): void {
-    if (!url) {
-
-    } else {
-      this.urlService.addShortUrl(url).subscribe(url => this.urls.push(url));
+  addShortUrl(urlString: string): Url{
+    if(!urlString){
+      this.message = "Url cannot be Empty";
+      return null;
+    }else{
+      this.urlService.addShortUrl(urlString).subscribe(url => this.urls.push(url));
+      this.message = "Url added Successfully";
       location.reload();
     }
   }

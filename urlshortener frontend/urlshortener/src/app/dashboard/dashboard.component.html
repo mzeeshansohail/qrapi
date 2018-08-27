@@ -7,6 +7,9 @@
       <div class="form-group">
         <input #newUrl type="text" class="form-control" id="url-input" placeholder="Your Original URL here" required>
       </div>
+      <div class="message-div">
+          <span id="message">{{message}}</span>
+      </div>
       <div class="btn-div">
         <button type="button" (click)="addShortUrl(newUrl.value)" class="btn btn-success btn-md">Shorten URL</button>
       </div>
@@ -14,26 +17,24 @@
   </div>
 </div>
 <div class="card">
-  <div class="container">
-    <table class="myTable table table-bordered">
-      <tr class="table-header">
-        <th scope="col">#</th>
-        <th style="max-width: 200px;" scope="col">Original Url</th>
-        <th scope="col">created On</th>
-        <th scope="col">Shortened Url</th>
-        <th scope="col">Clicks</th>
+  <table class="myTable table table-bordered">
+    <tr class="table-header">
+      <th class="col-index" scope="col">#</th>
+      <th class="col-orig-url" style="max-width: 200px;" scope="col">Original Url</th>
+      <th class="col-created-on" scope="col">created On</th>
+      <th class="col-short-url" scope="col">Shortened Url</th>
+      <th class="col-clicks" scope="col">Clicks</th>
+    </tr>
+    <tbody>
+      <tr class="myRow" *ngFor="let url of urls; let i=index" [attr.data-index]="i">
+        <td>{{i+1}}</td>
+        <td>{{url.originalUrl}}</td>
+        <td>{{url.createdOn | date:'yyyy/MM/dd'}}</td>
+        <td>
+          <a routerLink="/stats/{{url.id}}">{{url.shortUrl}}</a>
+        </td>
+        <td>{{url.totalClicksCount}}</td>
       </tr>
-      <tbody>
-        <tr class="myRow" *ngFor="let url of urls; let i=index" [attr.data-index]="i">
-          <td>{{i+1}}</td>
-          <td>{{url.originalUrl}}</td>
-          <td>{{url.createdOn | date:'yyyy/MM/dd'}}</td>
-          <td>
-            <a routerLink="/stats/{{url.id}}">{{url.shortUrl}}</a>
-          </td>
-          <td>{{url.totalClicksCount}}</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+    </tbody>
+  </table>
 </div>
