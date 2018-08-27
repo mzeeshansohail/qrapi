@@ -1,6 +1,7 @@
 package com.gr.urlshortener.core.service;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 
@@ -125,7 +126,7 @@ public class UrlService implements UrlServiceLocal {
 		 * Labels to only store the year from Date
 		 */
 		List<String> labels = new ArrayList<>();
-
+		Collections.sort(dates);
 		for (String dateString : dates) {
 			Long count = UrlInfoDaoHibernateImpl.getDao().getDataFromTable(id, dataToRead, dateString);
 			String Year = dateString.substring(0, 4);
