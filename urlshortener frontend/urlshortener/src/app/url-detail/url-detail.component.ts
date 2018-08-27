@@ -108,6 +108,9 @@ export class URLDetailComponent implements OnInit {
         },
         scales: {
           xAxes: [{
+          ticks:{
+              beginAtZero: true
+            },
             display: true
           }],
           yAxes: [{
