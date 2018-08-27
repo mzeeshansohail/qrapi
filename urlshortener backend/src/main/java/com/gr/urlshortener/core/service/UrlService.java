@@ -45,7 +45,7 @@ public class UrlService implements UrlServiceLocal {
 		urlInfo.setCreatedOn(date);
 		urlInfo.setExpiryDate(DateUtil.addMonthInDate(date, month));
 
-		String status = UrlInfoDaoHibernateImpl.getDao().save(urlInfo);
+		String status = UrlInfoDaoHibernateImpl.getDao().shortenUrl(urlInfo);
 
 		if ("Success".equals(status)) {
 			return "success";

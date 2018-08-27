@@ -14,7 +14,6 @@ import com.gr.common.dao.DaoException;
 import com.gr.common.dao.DaoManager;
 import com.gr.urlshortener.core.model.Clicks;
 import com.gr.urlshortener.core.model.UrlInfo;
-import com.gr.urlshortener.core.service.UrlShortener;
 
 public class UrlInfoDaoHibernateImpl extends AbstractHibernateDao<UrlInfo, Integer> implements UrlInfoDao {
 
@@ -43,7 +42,7 @@ public class UrlInfoDaoHibernateImpl extends AbstractHibernateDao<UrlInfo, Integ
 	public String shortenUrl(UrlInfo urlInfo) {
 		try {
 			Session session = getSession();
-			String shortenedUrl = "http://localhost:8080/urlshortener/" + UrlShortener.getRandomString();
+			String shortenedUrl = urlInfo.getShortUrl();
 			session.save(urlInfo);
 			return shortenedUrl;
 		} catch (Exception aex) {
