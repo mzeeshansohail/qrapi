@@ -55,9 +55,9 @@ export class URLDetailComponent implements OnInit {
       responsive: true,
       maintainAspectRatio: false,
       data: {
-        labels: labels.reverse(),
+        labels: labels,
         datasets: [{
-          data: data.reverse(),
+          data: data,
           backgroundColor: 'rgba(0,200,255,0.2)',
           borderColor: 'rgba(0,200,255,1)',
           borderwidth: 1
