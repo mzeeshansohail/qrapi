@@ -1,6 +1,6 @@
 <div class="header"></div>
 <div class="container-fluid">
-  <h1>Simplify Your Links</h1>
+  <h1>Simplify your Links</h1>
   <form #heroForm="ngForm">
     <div class="form-group">
       <div class="row">
@@ -20,13 +20,13 @@
 <div class="card">
   <table class="myTable table table-bordered">
     <tr class="table-header">
-      <th class="col-orig-url" style="max-width: 200px;" scope="col">Original Url</th>
-      <th class="col-created-on" scope="col">created</th>
+      <th class="col-orig-url" scope="col">Original Url</th>
+      <th class="col-created-on" scope="col">Created</th>
       <th class="col-short-url" scope="col">Short Url</th>
       <th class="col-clicks" scope="col">All Clicks</th>
     </tr>
     <tbody>
-      <tr class="myRow" *ngFor="let url of urls;">
+      <tr class="myRow" *ngFor="let url of filterBy('totalClicksCount')">
         <td>
           <a href="{{url.originalUrl}}" target="_blank">{{url.originalUrl}}</a>
         </td>
