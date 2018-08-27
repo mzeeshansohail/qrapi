@@ -18,6 +18,7 @@ import com.gr.urlshortener.core.model.UrlInfo;
 import com.gr.urlshortener.ws.dto.GraphDataDto;
 import com.gr.urlshortener.ws.dto.StatisticsDto;
 import com.gr.urlshortener.ws.dto.UrlInfoDto;
+import com.gr.urlshortener.ws.util.DateUtil;
 
 import eu.bitwalker.useragentutils.UserAgent;
 
@@ -91,8 +92,8 @@ public class UrlResource extends BaseResource {
 				 * after adding the click in table checking if URL is expired if expired ->
 				 * return bad request else redirect to the requested Page
 				 */
-				if (dateClicked.compareTo(urlInfo.getExpiryDate()) > 0) {
-					System.out.println(dateClicked.compareTo(urlInfo.getExpiryDate()));
+				System.out.println(DateUtil.getDaysBetween(dateClicked, urlInfo.getExpiryDate()));
+				if (DateUtil.getDaysBetween(dateClicked, urlInfo.getExpiryDate()) > 0) {
 					return Response.seeOther(longUrl).build();
 				} else
 					return Response.status(Status.BAD_REQUEST).entity("Url Expired").build();

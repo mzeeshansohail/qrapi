@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 .container-fluid {
-  background-color: #377bbb;
+  background-color: #595a5c;
   color: white;
   padding: 2%;
   padding-left: 5%;
@@ -15,14 +15,8 @@
   width: 100%;   
 }
 .clicks-chart{
-  height: 40%;
+  height: 20%;
   width: 80%;
-}
-.pie-chart-container{
-  width: 40%;
-  display: inline-block;
-  margin-left: 10%;
-  
 }
 .bar-chart-container{
   margin-left: 2%;
@@ -30,6 +24,12 @@
   height: 40%;
   display: inline-block;
 }
+.pie-chart-container{
+  width: 40%;
+  display: inline-block;
+  margin-left: 8%;
+}
+
 .card{
   margin-top: 20px;
   height: fit-content; 
@@ -45,15 +45,13 @@
 }
 
 .card-clicks{
-  margin-top: 20px;
+  margin: 20px;
   height: fit-content; 
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  transition: 0.3s;
   width: fit-content;
+  border: 0.01cm solid black;
   padding: 0.2%;
-}
-.card-clicks:hover{
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  padding-left: 2%;
+  padding-right: 2%;
 }
 .container{
   padding: 3px 10px;
@@ -65,4 +63,13 @@
 }
 .myBtn{
   margin-left: 5%;
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-bottom: 5%;
+}
+
+#click-count{
+  font: bold;
+  font-weight: bold;
 }

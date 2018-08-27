@@ -1,15 +1,13 @@
 /* DashboardComponent's private CSS styles */
-
-.form-control{
-  width: 100%;
-  padding: 10px;
-}
 .container-fluid {
   padding: 2%;
   padding-left: 5%;
   padding-right: 5%;
-  background-color: #377bbb;
+  background-color: #696969;
   color: white;
+}
+h1{
+  font-weight: lighter;
 }
 .myTable{
   width: 100% auto;
@@ -17,15 +15,13 @@
   margin-top: 10px;
   table-layout: fixed;
 }
-.btn-div{
-  float: right;
-}
+
 .table-header{
-  background-color: #377bbb;
-  color: white;
+  background-color:rgb(226, 224, 224);
+  color: grey;
 }
 .myRow:hover{
-  background-color: #bad7f3
+  background-color: #cbcdcf
 }
 
 .card{
@@ -44,10 +40,6 @@
 .container{
   width: 100% auto;
 }
-.col-index{
-  max-width: 2%;
-  width: 2%;
-}
 .col-orig-url{
   max-width: 25%;
   width: 64%;
@@ -61,6 +53,10 @@
   width: 10%;
 }
 .col-clicks{
-  max-width: 10%;
-  width: 4%;
+  max-width: 12%;
+  width: 6%;
+}
+.message-div{
+  color: white;
+  size: 20px;
 }

@@ -2,18 +2,17 @@
 @import url('https://unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.min.css');
 
 header {
-  background-color: #377bbb;
+  background-color: #b7bcc0;
   padding: 10px;
-  text-align: center;
   font-size: 35px;
-  color: white;
+  color: rgb(95, 93, 93);
 }
 footer {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  background-color: #377bbb;
-  padding: 20px;
+  background-color: #b7bcc0;
+  padding: 15px;
   text-align: center;
-  font-size: 10px;
+  font-size: 8px;
   color: white;
   position: fixed;
   bottom: 0%;

@@ -1,35 +1,36 @@
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-  crossorigin="anonymous">
-<div class="header">
-  <div class="container-fluid">
-    <h1>Simplify Your Links</h1>
-    <form #heroForm="ngForm">
-      <div class="form-group">
-        <input #newUrl type="text" class="form-control" id="url-input" placeholder="Your Original URL here" required>
+<div class="header"></div>
+<div class="container-fluid">
+  <h1>Simplify Your Links</h1>
+  <form #heroForm="ngForm">
+    <div class="form-group">
+      <div class="row">
+        <div class="col-md-6">
+          <input #newUrl type="text" class="myForm form-control" id="url-input" placeholder="Your Original URL here" required>
+        </div>
+        <div class="col-md-3">
+          <button type="button" (click)="addShortUrl(newUrl.value)" class="btn btn-light">Shorten URL</button>
+        </div>
       </div>
-      <div class="message-div">
-          <span id="message">{{message}}</span>
-      </div>
-      <div class="btn-div">
-        <button type="button" (click)="addShortUrl(newUrl.value)" class="btn btn-success btn-md">Shorten URL</button>
-      </div>
-    </form>
-  </div>
+    </div>
+    <div class="message-div">
+      <span id="message">{{message}}</span>
+    </div>
+  </form>
 </div>
 <div class="card">
   <table class="myTable table table-bordered">
     <tr class="table-header">
-      <th class="col-index" scope="col">#</th>
       <th class="col-orig-url" style="max-width: 200px;" scope="col">Original Url</th>
-      <th class="col-created-on" scope="col">created On</th>
-      <th class="col-short-url" scope="col">Shortened Url</th>
-      <th class="col-clicks" scope="col">Clicks</th>
+      <th class="col-created-on" scope="col">created</th>
+      <th class="col-short-url" scope="col">Short Url</th>
+      <th class="col-clicks" scope="col">All Clicks</th>
     </tr>
     <tbody>
-      <tr class="myRow" *ngFor="let url of urls; let i=index" [attr.data-index]="i">
-        <td>{{i+1}}</td>
-        <td>{{url.originalUrl}}</td>
-        <td>{{url.createdOn | date:'yyyy/MM/dd'}}</td>
+      <tr class="myRow" *ngFor="let url of urls;">
+        <td>
+          <a href="{{url.originalUrl}}" target="_blank">{{url.originalUrl}}</a>
+        </td>
+        <td>{{url.createdOn | date:'dd/MM/yyyy'}}</td>
         <td>
           <a routerLink="/stats/{{url.id}}">{{url.shortUrl}}</a>
         </td>

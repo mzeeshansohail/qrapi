@@ -6,8 +6,6 @@ import { UrlService } from '../url.service';
 import { Chart } from 'chart.js';
 
 
-
-
 @Component({
   selector: 'app-url-detail',
   templateUrl: './url-detail.component.html',
@@ -57,27 +55,31 @@ export class URLDetailComponent implements OnInit {
       responsive: true,
       maintainAspectRatio: false,
       data: {
-        labels: labels,
+        labels: labels.reverse(),
         datasets: [{
           data: data,
-          label: "clicks",
-          backgroundColor: ['#ED402A', '#F0AB05', '#A0B421', '#00A39F', '#00A37F'],
+          backgroundColor: 'rgba(0,200,255,0.2)',
+          borderColor: 'rgba(0,200,255,1)',
+          borderwidth: 1
 
         }]
       },
       options: {
-        title: {
-          display: true,
-          text: "Clicks Chart"
+        legend: {
+          display: false
         },
         scales: {
           xAxes: [{
             display: true
           }],
           yAxes: [{
+            ticks:{
+              beginAtZero: true
+            },
             display: true
           }]
-        }
+        },
+        
       }
     })
   }
@@ -91,18 +93,18 @@ export class URLDetailComponent implements OnInit {
         datasets: [{
           data: data,
           label: "platforms",
-          backgroundColor: ['#ED402A', '#F0AB05', '#A0B421', '#00A39F', '#00A37F', 'yellow', 'pink', 'blue']
+          backgroundColor: 'lightblue'
         }]
       },
       options: {
         legend: {
-          display: true,
+          display: false,
           backgroundColor: "#ED402A",
           borderColor: "#000"
         },
         title: {
           display: true,
-          text: "Platforms Chart"
+          text: "Platforms"
         },
         scales: {
           xAxes: [{
@@ -134,11 +136,8 @@ export class URLDetailComponent implements OnInit {
       }
     })
   }
- reloadPage(): void{
+  reload(): void{
     location.reload();
   }
 
-    goBack(): void {
-    this.location.back();
-  }
 }
